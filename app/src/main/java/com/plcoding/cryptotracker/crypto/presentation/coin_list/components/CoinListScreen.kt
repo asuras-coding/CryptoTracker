@@ -23,6 +23,7 @@ fun CoinListScreen(
     state: CoinListState,
     modifier: Modifier = Modifier
 ) {
+
     if (state.isLoading) {
         Box(
             modifier = modifier.fillMaxSize(),
@@ -50,9 +51,10 @@ fun CoinListScreen(
 @Composable
 private fun CoinListScreenPreview() {
     CryptoTrackerTheme {
-        CoinListScreen(state = CoinListState(
-            coins = (1..100).map { previewCoin.copy(id = it.toString()) }
-        ),
+        CoinListScreen(
+            state = CoinListState(
+                coins = (1..100).map { previewCoin.copy(id = it.toString()) }
+            ),
             modifier = Modifier.background(MaterialTheme.colorScheme.background))
     }
 }
